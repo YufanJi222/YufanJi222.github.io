@@ -7,9 +7,9 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 800px;
+      max-width: 920px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 40px 20px 60px;
       line-height: 1.7;
       color: #222;
       background-color: #fafafa;
@@ -17,25 +17,33 @@
 
     h1 {
       margin-bottom: 8px;
-      font-size: 2.2rem;
+      font-size: 2.4rem;
     }
 
     .subtitle {
       color: #666;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       font-size: 1.05rem;
     }
 
     h2 {
-      margin-top: 32px;
+      margin-top: 36px;
       margin-bottom: 12px;
-      font-size: 1.2rem;
+      font-size: 1.35rem;
       border-bottom: 1px solid #ddd;
       padding-bottom: 6px;
     }
 
+    p {
+      margin-top: 0;
+    }
+
     ul {
-      padding-left: 20px;
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 6px;
     }
 
     a {
@@ -47,33 +55,160 @@
       text-decoration: underline;
     }
 
+    .top {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 10px;
+    }
+
+    .profile-img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 12px;
+      display: block;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+    }
+
     .links a {
       margin-right: 16px;
+      white-space: nowrap;
+    }
+
+    .pub-card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .pub-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .pub-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .pub-figure {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      background: white;
+    }
+
+    .pub-links a {
+      margin-right: 14px;
+    }
+
+    .muted {
+      color: #666;
+      font-size: 0.97rem;
+    }
+
+    @media (max-width: 760px) {
+      .top,
+      .pub-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-img {
+        max-width: 180px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Yufan Ji</h1>
-  <div class="subtitle">
-    PhD Researcher, The Ohio State University
+  <div class="top">
+    <div>
+      <img src="PROFILE_1(1).PNG" alt="Yufan Ji profile illustration" class="profile-img">
+    </div>
+
+    <div>
+      <h1>Yufan Ji</h1>
+      <div class="subtitle">
+        PhD Researcher, The Ohio State University
+      </div>
+
+      <p>
+        I am a PhD researcher at The Ohio State University working at the intersection of
+        machine learning, causal inference, and energy systems. My research focuses on
+        electricity markets, retail energy pricing, time-series forecasting, and infrastructure resilience.
+      </p>
+
+      <p class="links">
+        <a href="mailto:ji.702@osu.edu">Email</a>
+        <a href="https://github.com/YufanJi222" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/yufan-ji-759801248/" target="_blank">LinkedIn</a>
+        <a href="CV_Yufan.pdf" target="_blank">CV</a>
+      </p>
+    </div>
   </div>
 
-  <p>
-    I am a PhD researcher at The Ohio State University working at the intersection of
-    machine learning, causal inference, and energy systems. My research focuses on
-    electricity markets, retail energy pricing, time-series forecasting, and
-    infrastructure resilience.
-  </p>
-  
-  <h2>News</h2>
-  <ul>
-    <li><strong>Feb 2026:</strong> Presented research at National Academies workshop on energy affordability.</li>
-    <li><strong>Nov 2025:</strong> Presented at APPAM Fall Research Conference (Seattle).</li>
-    <li><strong>Oct 2025:</strong> Received Best Presentation Award, OSU College of Engineering Graduate Symposium.</li>
-    <li><strong>Apr 2025:</strong> Featured in Sloan Foundation Impact Series on retail electricity markets.</li>
-  </ul>
-  
+<h2>News</h2>
+<ul>
+  <li>
+    <strong>Apr 2025:</strong>
+    Featured in
+    <a href="https://sloan.org/storage/app/media/files/annual_reports/2025_Highlights.pdf" target="_blank" rel="noopener noreferrer">
+      Alfred P. Sloan Foundation 2025 Highlights
+    </a>.
+  </li>
+
+  <li>
+    <strong>Apr 2025:</strong>
+    Featured in
+    <a href="https://impact.sloan.org/the-hidden-cost-of-choice-208bcf7e2d8c" target="_blank" rel="noopener noreferrer">
+      Sloan Impact Series
+    </a>.
+  </li>
+
+  <li>
+    <strong>Feb 2026:</strong>
+    Selected and presented research at the
+    <a href="https://www.nationalacademies.org/projects/CAST-PSSI-25-02" target="_blank" rel="noopener noreferrer">
+      National Academies workshop on energy affordability
+    </a>.
+  </li>
+
+  <li>
+    <strong>Dec 2025:</strong>
+    Published the Uncertainty-Aware Causal Forests paper in
+    <a href="https://doi.org/10.1016/j.eswa.2025.130578" target="_blank" rel="noopener noreferrer">
+      Expert Systems with Applications
+    </a>.
+  </li>
+
+  <li>
+    <strong>Nov 2025:</strong>
+    Presented at APPAM Fall Research Conference (Seattle).
+  </li>
+
+  <li>
+    <strong>Oct 2025:</strong>
+    Received the
+    <a href="https://ceg.osu.edu/degrees/resources-and-support/cege-graduate-research-expo" target="_blank" rel="noopener noreferrer">
+      Best Communication Award, OSU CEGE Graduate Research Expo
+    </a>.
+  </li>
+
+  <li>
+    <strong>Apr 2025:</strong>
+    Featured in the
+    <a href="https://us7.campaign-archive.com/?u=a5f578148ebbac29358287ebd&id=e57e76ff80" target="_blank" rel="noopener noreferrer">
+      Alfred P. Sloan Foundation Energy and Environment Newsletter
+    </a>.
+  </li>
+</ul>
+
   <h2>Research Interests</h2>
   <ul>
     <li>Electricity markets and consumer choice</li>
@@ -82,20 +217,54 @@
     <li>Power grid resilience and energy justice</li>
   </ul>
 
-  <h2>Selected Work</h2>
-  <ul>
-    <li>AI data centers and power grid resilience</li>
-    <li>Retail electricity price forecasting</li>
-    <li>Consumer preferences in retail electricity markets</li>
-  </ul>
+  <h2>Selected Publications</h2>
 
-  <h2>Links</h2>
-  <p class="links">
-    <a href="mailto:ji.702@osu.edu">Email</a>
-    <a href="https://github.com/YufanJi222" target="_blank">GitHub</a>
-    <a href="#">LinkedIn</a>
-    <a href="#">CV</a>
-  </p>
+      <div class="pub-card">
+    <h3>Robust treatment assignment with uncertainty-aware causal forests: Joint optimization of accuracy and estimation uncertainty</h3>
+    <div class="pub-layout">
+      <div>
+        <img src="causal_forest_paper_fig.png" alt="Figure from uncertainty-aware causal forest paper" class="pub-figure">
+      </div>
+      <div>
+        <p class="muted">
+          Expert Systems with Applications, 2026
+        </p>
+        <p>
+          This paper introduces an uncertainty-aware causal forest framework for treatment assignment.
+          Instead of optimizing only prediction accuracy, the method also minimizes confidence-interval width,
+          producing treatment effect estimates that are more stable, better calibrated, and more useful for
+          risk-aware decision-making in policy and other applied settings.
+        </p>
+        <p class="pub-links">
+          <a href="1-s2.0-S0957417425041934-main(1).pdf" target="_blank">Paper PDF</a>
+        </p>
+      </div>
+    </div>
+  </div>
+    
+  <div class="pub-card">
+    <h3>Efficiency and consumer welfare under retail electricity deregulation: Analysis of Ohio’s retail choice markets</h3>
+    <div class="pub-layout">
+      <div>
+        <img src="ohio_retail_paper_fig.png" alt="Figure from Ohio retail electricity paper" class="pub-figure">
+      </div>
+      <div>
+        <p class="muted">
+          Journal of Critical Infrastructure Policy, 2025
+        </p>
+        <p>
+          This paper builds a comprehensive database of daily retail electricity offers in Ohio and examines
+          market outcomes from the consumer perspective. The study shows that a large share of competitive
+          offers were more expensive than the default utility service, and that welfare-improving offers were
+          available only part of the time, raising concerns about efficiency and consumer welfare in retail choice markets.
+        </p>
+        <p class="pub-links">
+          <a href="Journal%20of%20Critical%20Infrastructure%20Policy%20-%202024%20-%20Dormady%20-%20Efficiency%20and%20consumer%20welfare%20under%20retail%20electricity.pdf" target="_blank">Paper PDF</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
 
 </body>
 </html>
