@@ -1,4 +1,4 @@
-You can also [download my CV as a PDF](/CV_Yufan.pdf).
+You can also [download my CV as a PDF](https://yufanji222.github.io/yufan-personal-website_PRISM/CV_Yufan.pdf).
 
 ## Education
 

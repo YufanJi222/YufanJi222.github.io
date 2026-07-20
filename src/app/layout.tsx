@@ -12,6 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const config = getConfig();
   const runtimeI18n = getRuntimeI18nConfig(config.i18n);
   const openGraphLocale = runtimeI18n.defaultLocale === 'zh' ? 'zh_CN' : 'en_US';
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
   return {
     title: {
@@ -24,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
     creator: config.author.name,
     publisher: config.author.name,
     icons: {
-      icon: config.site.favicon,
+      icon: `${basePath}${config.site.favicon}`,
     },
     openGraph: {
       type: 'website',
@@ -131,16 +132,7 @@ export default function RootLayout({
   return (
     <html lang={runtimeI18n.defaultLocale} className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="icon" href={config.site.favicon} type="image/svg+xml" />
-        <link rel="dns-prefetch" href="https://jialeliu.com" />
-        <link rel="preconnect" href="https://jialeliu.com" crossOrigin="" />
-        <link
-          rel="preload"
-          as="font"
-          type="font/woff2"
-          href="https://jialeliu.com/fonts/georgiab.woff2"
-          crossOrigin=""
-        />
+        <link rel="icon" href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${config.site.favicon}`} type="image/svg+xml" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

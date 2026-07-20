@@ -36,6 +36,7 @@ interface ProfileProps {
 
 export default function Profile({ author, social, features, researchInterests }: ProfileProps) {
     const messages = useMessages();
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
     const [hasLiked, setHasLiked] = useState(false);
     const [showThanks, setShowThanks] = useState(false);
@@ -49,7 +50,7 @@ export default function Profile({ author, social, features, researchInterests }:
     useEffect(() => {
         if (!features.enable_likes) return;
 
-        const userHasLiked = localStorage.getItem('jiale-website-user-liked');
+        const userHasLiked = localStorage.getItem('yufan-website-user-liked');
         if (userHasLiked === 'true') {
             setHasLiked(true);
         }
@@ -60,11 +61,11 @@ export default function Profile({ author, social, features, researchInterests }:
         setHasLiked(newLikedState);
 
         if (newLikedState) {
-            localStorage.setItem('jiale-website-user-liked', 'true');
+            localStorage.setItem('yufan-website-user-liked', 'true');
             setShowThanks(true);
             setTimeout(() => setShowThanks(false), 2000);
         } else {
-            localStorage.removeItem('jiale-website-user-liked');
+            localStorage.removeItem('yufan-website-user-liked');
             setShowThanks(false);
         }
     };
@@ -114,7 +115,7 @@ export default function Profile({ author, social, features, researchInterests }:
             {/* Profile Image */}
             <div className="w-64 h-64 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105">
                 <Image
-                    src={author.avatar}
+                    src={`${basePath}${author.avatar}`}
                     alt={author.name}
                     width={256}
                     height={256}
