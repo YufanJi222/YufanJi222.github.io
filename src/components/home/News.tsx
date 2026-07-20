@@ -17,7 +17,6 @@ interface NewsProps {
 export default function News({ items, title }: NewsProps) {
     const messages = useMessages();
     const resolvedTitle = title || messages.home.news;
-    const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
     return (
         <motion.section
@@ -36,12 +35,10 @@ export default function News({ items, title }: NewsProps) {
                                     p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
                                     a: ({ href = '', children, ...props }) => {
                                         const isExternal = /^https?:\/\//i.test(href);
-                                        const resolvedHref = !isExternal && href.startsWith('/') ? `${basePath}${href}` : href;
-
                                         return (
                                             <a
                                                 {...props}
-                                                href={resolvedHref}
+                                                href={href}
                                                 target={isExternal ? '_blank' : undefined}
                                                 rel={isExternal ? 'noopener noreferrer' : undefined}
                                                 className="font-medium text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"

@@ -11,8 +11,6 @@ interface TextPageProps {
 }
 
 export default function TextPage({ config, content, embedded = false }: TextPageProps) {
-    const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
-
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -39,12 +37,10 @@ export default function TextPage({ config, content, embedded = false }: TextPage
                         a: ({ href = '', children, ...props }) => {
                             const isExternal = /^https?:\/\//i.test(href);
                             const isPdf = href.toLowerCase().endsWith('.pdf');
-                            const resolvedHref = !isExternal && href.startsWith('/') ? `${basePath}${href}` : href;
-
                             return (
                                 <a
                                     {...props}
-                                    href={resolvedHref}
+                                    href={href}
                                     target={isExternal || isPdf ? '_blank' : undefined}
                                     rel={isExternal || isPdf ? 'noopener noreferrer' : undefined}
                                     className={isPdf

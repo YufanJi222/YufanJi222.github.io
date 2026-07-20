@@ -39,7 +39,6 @@ function publicationTimestamp(publication: Publication): number {
 
 export default function PublicationsList({ config, publications, embedded = false }: PublicationsListProps) {
     const messages = useMessages();
-    const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedYear, setSelectedYear] = useState<number | 'all'>('all');
     const [selectedType, setSelectedType] = useState<string | 'all'>('all');
@@ -239,7 +238,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                     <div className="w-full md:w-48 flex-shrink-0">
                                         <div className="aspect-video md:aspect-[4/3] relative rounded-lg overflow-hidden bg-neutral-100 dark:bg-neutral-800">
                                             <Image
-                                                src={`${basePath}/papers/${pub.preview}`}
+                                                src={`/papers/${pub.preview}`}
                                                 alt={pub.title}
                                                 fill
                                                 className="object-cover"
