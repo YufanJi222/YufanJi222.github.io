@@ -1,5 +1,6 @@
-I am a PhD student at the School of Science, University of Example, advised by [Prof. Advisor One](https://example.com) and [Dr. Advisor Two](https://example.com).
+I am a PhD researcher in Civil Engineering at The Ohio State University, with a minor in Computer Science and Engineering. I apply machine learning, causal inference, and statistical modeling to large-scale electricity market and infrastructure data under the supervision of [Prof. Abdollah Shafieezadeh](https://ceg.osu.edu/people/shafieezadeh.1). I am a member of the [Risk Assessment and Management of Structural and Infrastructure Systems (RAMSIS) Lab](https://ceg.osu.edu/risk-assessment-and-management-structural-and-infrastructure-systems).
 
-Prior to this, I obtained a BSc degree with First Class Honours in Natural Science from the University of Example.
+My research builds Python and R pipelines and predictive models for datasets containing more than two million electricity market observations. I study pricing dynamics, supplier behavior, grid resilience, and consumer decision-making, with an emphasis on interpretable models that support real-world decisions in energy systems.
 
-My current research focuses on investigating the mathematical principles of natural philosophy.
+I am also affiliated with the [Energy Markets & Policy Team](https://u.osu.edu/energymarkets/), where I study retail electricity markets, consumer choice, and pricing behavior. I am particularly interested in data science and applied research at the intersection of energy analytics, grid resilience, infrastructure systems, and public policy.
+

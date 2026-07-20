@@ -1,27 +1,46 @@
 type = "card"
-title = "Awards"
-description = "Honors and awards I have received."
+title = "Awards & Honors"
+description = "Recognition for research, communication, service, and leadership."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
+title = "Graduate Student Travel Award"
+subtitle = "The Ohio State University College of Engineering"
+date = "2026"
+content = "$1,000 travel award supporting scholarly presentation and professional development."
+
+[[items]]
+title = "Christine Mirzayan Science & Technology Policy Graduate Fellowship"
+subtitle = "National Academies of Sciences, Engineering, and Medicine"
+date = "2026"
+content = "Selected for a 12-week science and technology policy fellowship in Washington, D.C., from August to November 2026. [Program details](https://www.nationalacademies.org/our-work/the-christine-mirzayan-science--technology-policy-graduate-fellowship-program)."
+
+[[items]]
+title = "Best Communication Award"
+subtitle = "OSU CEGE Graduate Research Expo"
 date = "2025"
-content = "Description of the award."
+content = "Recognized for communicating research on causal graph-guided temporal convolutional networks for retail electricity price forecasting."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2024"
-content = "Description of the award."
+title = "Best Presentation Award"
+subtitle = "OSU College of Engineering Graduate Research Symposium"
+date = "2025"
+content = "Recognized for the presentation *Interpretable Retail Electricity Price Forecasting with Causal Graph-Informed Temporal Convolutional Networks*."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2023"
-content = "Description of the award."
+title = "Sustainability Institute Student Grant"
+subtitle = "The Ohio State University"
+date = "2025"
+content = "$5,000 award supporting student-led sustainability research. [Award announcement](https://si.osu.edu/news/sustainability-institute-announces-2025-student-grant-award-winners)."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2022"
-content = "Description of the award."
+title = "Student Research Feature"
+subtitle = "Alfred P. Sloan Foundation"
+date = "2025-2026"
+content = "Featured in the Energy and Environment Newsletter, the 2025 Highlights report, and the Sloan Impact Series for research on retail electricity markets and consumer welfare."
+
+[[items]]
+title = "Graduate Student Ambassador"
+subtitle = "Department of Civil, Environmental and Geodetic Engineering, The Ohio State University"
+date = "2025-Present"
+content = "Representing the graduate student community in departmental outreach and engagement."
+
