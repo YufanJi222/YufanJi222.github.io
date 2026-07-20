@@ -8,7 +8,7 @@ PhD in Civil Engineering (Structural Engineering), expected December 2027
 
 Minor in Computer Science and Engineering
 
-Advisor: [Prof. Abdollah Shafieezadeh](https://ceg.osu.edu/people/shafieezadeh.1)
+Advisor: Prof. Abdollah Shafieezadeh
 
 **National University of Singapore**, Singapore
 

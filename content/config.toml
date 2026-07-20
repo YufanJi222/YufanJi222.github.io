@@ -20,6 +20,8 @@ location_details = [
 ]
 github = "https://github.com/YufanJi222"
 linkedin = "https://www.linkedin.com/in/yufan-ji-759801248/"
+google_scholar = "https://scholar.google.com/citations?user=P0tMc7gAAAAJ&hl=en"
+orcid = "https://orcid.org/0009-0004-4015-3770"
 
 [features]
 enable_likes = false

@@ -84,12 +84,12 @@ export default function Profile({ author, social, features, researchInterests }:
             isLocation: true,
         }] : []),
         ...(social.google_scholar ? [{
-            name: 'Google Scholar',
+            name: 'Google Scholar profile',
             href: social.google_scholar,
             icon: AcademicCapIcon,
         }] : []),
         ...(social.orcid ? [{
-            name: 'ORCID',
+            name: 'ORCID profile',
             href: social.orcid,
             icon: OrcidIcon,
         }] : []),

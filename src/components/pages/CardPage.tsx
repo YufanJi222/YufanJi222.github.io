@@ -57,7 +57,19 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                         className={`bg-white dark:bg-neutral-900 ${embedded ? "p-4" : "p-6"} rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-lg transition-all duration-200 hover:scale-[1.01]`}
                     >
                         <div className="flex justify-between items-start mb-2">
-                            <h3 className={`${embedded ? "text-lg" : "text-xl"} font-semibold text-primary`}>{item.title}</h3>
+                            <h3 className={`${embedded ? "text-lg" : "text-xl"} font-semibold text-primary`}>
+                                {item.link ? (
+                                    <a
+                                        href={item.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`${item.title} (opens in a new tab)`}
+                                        className="rounded-sm underline decoration-accent/40 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                                    >
+                                        {item.title}
+                                    </a>
+                                ) : item.title}
+                            </h3>
                             {item.date && (
                                 <span className="text-sm text-neutral-500 font-medium bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded">
                                     {item.date}
