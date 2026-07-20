@@ -3,9 +3,10 @@ title = "About"
 
 [profile]
 research_interests = [
-  "Computational Physics",
-  "Mathematical Principles",
-  "Proof of Theorems"
+  "Electricity Markets and Consumer Behavior",
+  "Forecasting and Uncertainty Quantification",
+  "Causal Machine Learning",
+  "Power System Resilience and Energy Justice"
 ]
 
 [[sections]]
@@ -19,7 +20,7 @@ id = "featured_publications"
 type = "publications"
 title = "Selected Publications"
 filter = "selected"
-limit = 5
+limit = 4
 
 [[sections]]
 id = "news"

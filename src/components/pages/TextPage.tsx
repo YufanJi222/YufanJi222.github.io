@@ -34,14 +34,24 @@ export default function TextPage({ config, content, embedded = false }: TextPage
                         ul: ({ children }) => <ul className="list-disc list-inside mb-4 space-y-1 ml-4">{children}</ul>,
                         ol: ({ children }) => <ol className="list-decimal list-inside mb-4 space-y-1 ml-4">{children}</ol>,
                         li: ({ children }) => <li className="mb-1">{children}</li>,
-                        a: ({ ...props }) => (
-                            <a
-                                {...props}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-accent font-medium transition-all duration-200 rounded hover:bg-accent/10 hover:shadow-sm"
-                            />
-                        ),
+                        a: ({ href = '', children, ...props }) => {
+                            const isExternal = /^https?:\/\//i.test(href);
+                            const isPdf = href.toLowerCase().endsWith('.pdf');
+                            return (
+                                <a
+                                    {...props}
+                                    href={href}
+                                    target={isExternal || isPdf ? '_blank' : undefined}
+                                    rel={isExternal || isPdf ? 'noopener noreferrer' : undefined}
+                                    className={isPdf
+                                        ? "inline-flex items-center rounded-lg bg-accent px-4 py-2 font-semibold text-white shadow-sm transition-colors hover:bg-accent-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                                        : "text-accent font-medium transition-all duration-200 rounded hover:bg-accent/10 hover:shadow-sm"
+                                    }
+                                >
+                                    {children}
+                                </a>
+                            );
+                        },
                         blockquote: ({ children }) => (
                             <blockquote className="border-l-4 border-accent/50 pl-4 italic my-4 text-neutral-600 dark:text-neutral-500">
                                 {children}

@@ -1,4 +1,5 @@
 type = "publication"
 title = "Publications"
-description = "A collection of my research work."
+description = "Peer-reviewed and ongoing research on electricity markets, causal machine learning, forecasting, and infrastructure resilience."
 source = "publications.bib"
+

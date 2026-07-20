@@ -23,6 +23,20 @@ interface PublicationsListProps {
     embedded?: boolean;
 }
 
+const underReviewStatuses = new Set(['under-review', 'submitted', 'in-preparation', 'draft']);
+
+function publicationTimestamp(publication: Publication): number {
+    const monthNames: Record<string, number> = {
+        jan: 1, january: 1, feb: 2, february: 2, mar: 3, march: 3,
+        apr: 4, april: 4, may: 5, jun: 6, june: 6, jul: 7, july: 7,
+        aug: 8, august: 8, sep: 9, sept: 9, september: 9, oct: 10,
+        october: 10, nov: 11, november: 11, dec: 12, december: 12,
+    };
+    const rawMonth = publication.month?.toString().toLowerCase() ?? '';
+    const month = monthNames[rawMonth] ?? (Number.parseInt(rawMonth, 10) || 1);
+    return publication.year * 100 + month;
+}
+
 export default function PublicationsList({ config, publications, embedded = false }: PublicationsListProps) {
     const messages = useMessages();
     const [searchQuery, setSearchQuery] = useState('');
@@ -58,6 +72,17 @@ export default function PublicationsList({ config, publications, embedded = fals
             return matchesSearch && matchesYear && matchesType;
         });
     }, [publications, searchQuery, selectedYear, selectedType]);
+
+    const publicationGroups = useMemo(() => {
+        const newestFirst = (a: Publication, b: Publication) => publicationTimestamp(b) - publicationTimestamp(a);
+        const underReview = filteredPublications.filter(pub => underReviewStatuses.has(pub.status)).sort(newestFirst);
+        const published = filteredPublications.filter(pub => !underReviewStatuses.has(pub.status)).sort(newestFirst);
+
+        return [
+            { label: 'Under Review', publications: underReview },
+            { label: 'Published', publications: published },
+        ].filter(group => group.publications.length > 0);
+    }, [filteredPublications]);
 
     return (
         <motion.div
@@ -185,13 +210,22 @@ export default function PublicationsList({ config, publications, embedded = fals
             </div>
 
             {/* Publications Grid */}
-            <div className="space-y-6">
+            <div className="space-y-10">
                 {filteredPublications.length === 0 ? (
                     <div className="text-center py-12 text-neutral-500">
                         {messages.publications.noResults}
                     </div>
                 ) : (
-                    filteredPublications.map((pub, index) => (
+                    publicationGroups.map(group => (
+                        <section key={group.label} aria-labelledby={`publication-group-${group.label.toLowerCase().replace(' ', '-')}`}>
+                            <h2
+                                id={`publication-group-${group.label.toLowerCase().replace(' ', '-')}`}
+                                className="mb-5 border-b border-neutral-200 pb-2 text-2xl font-serif font-bold text-primary dark:border-neutral-800"
+                            >
+                                {group.label}
+                            </h2>
+                            <div className="space-y-6">
+                            {group.publications.map((pub, index) => (
                         <motion.div
                             key={pub.id}
                             initial={{ opacity: 0, y: 20 }}
@@ -336,6 +370,9 @@ export default function PublicationsList({ config, publications, embedded = fals
                                 </div>
                             </div>
                         </motion.div>
+                            ))}
+                            </div>
+                        </section>
                     ))
                 )}
             </div>
