@@ -57,9 +57,3 @@ title = "CV"
 type = "page"
 target = "cv"
 href = "/cv"
-
-[[navigation]]
-title = "CV PDF"
-type = "link"
-target = "cv-pdf"
-href = "https://yufanji222.github.io/yufan-personal-website_PRISM/CV_Yufan.pdf"
